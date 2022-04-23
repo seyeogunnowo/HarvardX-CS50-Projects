@@ -1,0 +1,81 @@
+.logo{
+  position: absolute;
+  width: 333px;
+  height: 91px;
+  left: 500px;
+  top: 200px;
+}
+.searcharea{
+  position: absolute;
+  width: 525px;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid rgba(140, 140, 140, 0.72);
+  box-sizing: border-box;
+  border-radius: 47px;
+  left: 390px;
+  top: 310px;
+}
+.searchfield{
+    margin-top: 2px;
+    width: 470px;
+    height: 43px;
+    background: #FFFFFF;
+    border: 0px solid rgba(140, 140, 140, 0.72);
+    box-sizing: border-box;
+    border-radius: 47px;
+}
+.searchbutton{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 490px;
+  top: 280px;
+  border: 1px solid #F1F1F1;
+}
+.luckybutton{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 650px;
+  top: 280px;
+  border: 1px solid #F1F1F1;
+}
+.alt_links{
+  position: absolute;
+  left: 1100px;
+  top: 42px;
+  display: inline-block;
+}
+
+.imagetext{
+  position: absolute;
+  left: 720px;
+  top: 250px;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #468EF9;
+}
+
+.srchimg{
+  position: absolute;
+  width: 23px;
+  height: 21px;
+  left: 870px;
+  top: 323px;
+}
+.searchbutton{
+  position: absolute;
+  width: 39px;
+  height: 30px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 860px;
+  top: 320px;
+  border: 0px solid #c4c4c4;
+  opacity: 0.0;
+}

@@ -1,0 +1,87 @@
+.logo{
+  position: absolute;
+  width: 70px;
+  height: 23px;
+  left: 40px;
+  top: 40px;
+}
+h1{
+  position: absolute;
+  left: 70px;
+  top: 70px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 27px;
+  color: #FF4D4D;
+}
+hr{
+  position: absolute;
+  width: 1340px;
+  height: 0px;
+  top: 125px;
+  border: 0.2px solid #DDDDDD;
+}
+.section{
+  position: absolute;
+  left: 70px;
+  top: 150px;
+}
+.intro{
+  top: 5px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+h3{
+  font-weight: normal;
+  font-size: 14px;
+  padding-top: 15px;
+}
+.alltext, .exacttext, .anytext, .notext{
+  position: absolute;
+  width: 435px;
+  height: 27px;
+  background: #FFFFFF;
+  border: 1px solid #9E9E9E;
+  box-sizing: border-box;
+}
+.alltext{
+  left: 180px;
+  top: 60px;
+}
+.exacttext{
+  left: 180px;
+  top: 105px;
+}
+.anytext{
+  left: 180px;
+  top: 150px;
+}
+.notext{
+  left: 180px;
+  top: 195px;
+}
+.srchbutton{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #468EF9;
+  border: 1px solid #F1F1F1;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 9px;
+  left: 470px;
+  color: white;
+}
+.srchbutton:hover{
+  background: #2D5A9E;
+  color: white;
+}
+.alt_links{
+  position: absolute;
+  left: 1100px;
+  top: 42px;
+  display: inline-block;
+}

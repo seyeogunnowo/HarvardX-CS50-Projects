@@ -1,0 +1,64 @@
+.logo{
+  position: absolute;
+  width: 333px;
+  height: 91px;
+  left: 500px;
+  top: 100px;
+}
+.searchfield{
+  position: absolute;
+  width: 511px;
+  height: 43px;
+  background: #FFFFFF;
+  border: 1px solid rgba(140, 140, 140, 0.72);
+  box-sizing: border-box;
+  border-radius: 47px;
+  left: 390px;
+  top: 220px;
+}
+.searchbutton{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 490px;
+  top: 280px;
+  border: 1px solid #F1F1F1;
+}
+.luckybutton{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 650px;
+  top: 280px;
+  border: 1px solid #F1F1F1;
+}
+.alt_links{
+  position: absolute;
+  left: 1100px;
+  top: 42px;
+  display: inline-block;
+}
+
+.searchbutton:hover{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 490px;
+  top: 280px;
+  border: 1px solid #5E5E5E;
+}
+.luckybutton:hover{
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  background: #F1F1F1;
+  border-radius: 5px;
+  left: 650px;
+  top: 280px;
+  border: 1px solid #5E5E5E;
