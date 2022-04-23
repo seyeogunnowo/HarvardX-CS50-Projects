@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h2>Place a bid for the following:</h2>
+<h2>{{listing_title}}</h2>
+<h5>{{listing_starting_bid}}</h5>
+<form class="" action="{%url 'auctions:placed_bids'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value="{{listing_title}}">
+  <input type="hidden" name="listing_starting_bid" value="{{listing_starting_bid}}">
+  <input type="text" name="bid_amount" value="" placeholder="Bid Amount">
+  <input type="submit" name="" value="Bid">
+</form>
+{%endblock%}

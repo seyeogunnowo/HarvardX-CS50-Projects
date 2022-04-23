@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+
+<h1>Watchlist</h1>
+<p>These items are in your Watchlist</p>
+{%for item in watchlist%}
+<form class="" action="{%url 'auctions:listing_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value="{{item.title}}">
+  <input type="hidden" name="listing_id" value="{{item.listing_id}}">
+  <input type="submit" name="" class="listing_title" value="{{item.title}}">
+</form>
+{%endfor%}
+
+{%endblock%}

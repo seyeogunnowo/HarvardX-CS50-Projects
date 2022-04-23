@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<form class="listings_form" action="{%url 'auctions:index'%}" method="post">
+  {%csrf_token%}
+  <input type="text" name="title" value="" placeholder="Item Name">
+  <input type="hidden" name="username" value={{user.username}}>
+  <div class="">
+    <textarea name="description" rows="8" cols="80" placeholder="Item Description"></textarea>
+  </div>
+  <input type="number" name="starting_bid" value="" placeholder="Starting Bid">
+  <input type="url" name="image_url" value="" placeholder="Image URL">
+  <p>Select a category for your listing.</p>
+  <input type="radio" name="category" value="none" checked> <label for="none">None</label>  
+  <input type="radio" name="category" value="fashion"> <label for="fashion">Fashion</label>
+  <input type="radio" name="category" value="toys"> <label for="toys">Toys</label>
+  <input type="radio" name="category" value="electronics"> <label for="electronics">Electronics</label>
+  <input type="radio" name="category" value="home"> <label for="home">Home</label>
+  <input type="radio" name="category" value="sports"> <label for="sports">Sports</label>
+  <input type="radio" name="category" value="office"> <label for="office">Office</label>
+  <input type="radio" name="category" value="others"> <label for="others">Others</label>
+  <div class="">
+    <input type="submit" name="" value="Create Listing">
+  </div>
+</form>
+{%endblock%}

@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h2>Bids you have placed.</h2>
+{%for bid in bids%}
+<div class="">
+  <hr>
+  <h3>{{bid.title}}</h3>
+  <h4>Starting bid: {{bid.starting_bid}}</h4>
+  <h4>Placed bid: {{bid.bid}}</h4>
+  <br>
+</div>
+{%endfor%}
+{%endblock%}

@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h3>Comment on: {{listing_title}}</h3>
+<p>Comment by {{user.username}}</p>
+<form class="" action="{%url 'auctions:comment_conf'%}" method="post">
+  {%csrf_token%}
+    <input type="hidden" name="listing_id" value={{listing_id}}>
+    <input type="hidden" name="l_title" value={{listing_title}}>
+    <input type="hidden" name="username" value={{user.username}}>
+    <textarea name="message" rows="8" cols="80" placeholder="Your Comment"></textarea>
+    <input type="submit" name="" value="Comment">
+</form>
+{%endblock%}

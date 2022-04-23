@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h2>{{listing.title}}</h2>
+<h5>Price: {{listing.starting_bid}}</h5>
+<h5>Description:</h5>
+<p>{{listing.description}}</p>
+<h5>Category: {{listing.category}}</h5>
+{%if user.is_authenticated %}
+<form class="" action="{%url 'auctions:watchlist'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_id" value="{{listing.id}}">
+  <input type="submit" name="" value="Add to Watchlist">
+</form>
+{%endif%}
+{%if user.is_authenticated %}
+<form class="" action="{%url 'auctions:bids'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value="{{listing.title}}">
+  <input type="hidden" name="listing_starting_bid" value="{{listing.starting_bid}}">
+  <input type="submit" name="" value="Place Bid">
+</form>
+{%endif%}
+<br>
+{%if user.username == listing.username%}
+<form class="" action="{%url 'auctions:ldelete'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_id" value={{listing.id}}>
+  <input type="submit" name="" value="Close Auction">
+</form>
+{%endif%}
+{%endblock%}

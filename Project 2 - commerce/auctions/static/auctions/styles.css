@@ -1,0 +1,17 @@
+body {
+    padding: 10px;
+}
+.listing_title{
+  background: white;
+  font-size: 24px;
+  border: 0px;
+  color: blue;
+  padding: 0px;
+}
+.indlist{
+  padding: 10px;
+  border: 1px solid grey;
+}
+.listing_buttons{
+  display: inline;
+}

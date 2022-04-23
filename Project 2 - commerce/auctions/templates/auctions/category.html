@@ -1,0 +1,48 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='fashion'>
+  <input type="submit" name="" class="listing_title" value="Fashion">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='toys'>
+  <input type="submit" name="" class="listing_title" value="Toys">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='electronics'>
+  <input type="submit" name="" class="listing_title" value="Electronics">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='home'>
+  <input type="submit" name="" class="listing_title" value="Home">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='sports'>
+  <input type="submit" name="" class="listing_title" value="Sports">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='office'>
+  <input type="submit" name="" class="listing_title" value="Office">
+</form>
+<br>
+<form class="" action="{%url 'auctions:category_page'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="category" value='others'>
+  <input type="submit" name="" class="listing_title" value="Others">
+</form>
+<br>
+
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h5>Your comment has been made</h5>
+<form class="" action="{%url 'auctions:listing_page'%}" method="get">
+  {%csrf_token%}
+    <input type="hidden" name="listing_id" value={{listing_id}}>
+    <input type="hidden" name="listing_title" value={{l_title}}>
+    <input type="submit" name="" value="Back to Listing">
+  </form>
+{%endblock%}

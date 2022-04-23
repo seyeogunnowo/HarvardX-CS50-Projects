@@ -1,0 +1,24 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h1>Active Listings</h1>
+<hr>
+{%for listing in listings%}
+<div class="indlist">
+  <form class="" action="{%url 'auctions:listing_page'%}" method="get">
+    {%csrf_token%}
+    <div class="">
+      <img style='width:380px;' src="{{listing.image_url}}" alt="">
+    </div>
+    <input type="hidden" name="listing_title" value={{listing.title}}>
+    <input type="hidden" name="listing_id" value={{listing.id}}>
+    <input type="submit" name="" class="listing_title" value="{{listing.title}}">
+  </form>
+  <h5>Price: {{listing.starting_bid}}</h5>
+  <h5>Description:</h5>
+  <p>{{listing.description}}</p>
+  <h5>Category: {{listing.category}}</h5>
+  <br>
+</div>
+{% endfor %}
+{% endblock %}

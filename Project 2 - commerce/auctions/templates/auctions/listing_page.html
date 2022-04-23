@@ -1,0 +1,72 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<div class="">
+  <img style='width:450px;' src="{{listing.image_url}}" alt="">
+</div>
+<h2>{{listing.title}}</h2>
+<h5>Price: {{listing.starting_bid}}</h5>
+<h5>Description:</h5>
+<p>{{listing.description}}</p>
+<h5>Category: {{listing.category}}</h5>
+<div class="listing_buttons">
+{%if user.is_authenticated %}
+{%if listing.title not in watchlist_list and listing.username != user.username %}
+<form class="" action="{%url 'auctions:watchlist'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_id" value="{{listing.id}}">
+  <input type="submit" name="" value="Add to Watchlist">
+</form>
+{%endif%}
+{%endif%}
+{%if user.is_authenticated %}
+{%if listing.title in watchlist_list and listing.username != user.username %}
+<form class="" action="{%url 'auctions:wremove'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value="{{listing.title}}">
+  <input type="submit" name="" value="Remove from Watchlist">
+</form>
+{%endif%}
+{%endif%}
+{%if user.is_authenticated %}
+{%if user.username != listing.username%}
+<form class="" action="{%url 'auctions:bids'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value={{listing.title}}>
+  <input type="hidden" name="username" value={{user.username}}>
+  <input type="hidden" name="listing_starting_bid" value={{listing.starting_bid}}>
+  <input type="submit" name="" value="Place Bid">
+</form>
+{%endif%}
+{%endif%}
+<br>
+{%if user.username == listing.username%}
+<form class="" action="{%url 'auctions:ldelete'%}" method="post">
+  {%csrf_token%}
+  <input type="hidden" name="listing_title" value={{listing.title}}>
+  <input type="hidden" name="username" value={{listing.username}}>
+  <input type="hidden" name="starting_bid" value={{listing.starting_bid}}>
+  <input type="hidden" name="description" value={{listing.description}}>
+  <input type="submit" name="" value="Close Auction">
+</form>
+{%endif%}
+{%if user.is_authenticated%}
+<form class="" action="{%url 'auctions:comment'%}" method="get">
+  {%csrf_token%}
+  <input type="hidden" name="listing_id" value={{listing.id}}>
+  <input type="hidden" name="listing_title" value={{listing.title}}>
+  <input type="submit" name="" value="Comment">
+</form>
+{%endif%}
+<br>
+</div>
+<h5>Comments</h5>
+{%for comment in comments%}
+<div class="">
+  <strong>Comment by {{comment.username}}</strong>
+  <p>{{comment.message}}</p>
+  <p>__________________________________</p>
+  <br>
+</div>
+{%endfor%}
+{%endblock%}

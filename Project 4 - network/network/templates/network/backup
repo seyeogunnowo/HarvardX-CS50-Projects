@@ -1,0 +1,35 @@
+document.addEventListener('DOMContentLoaded',()=>{
+  fetch('/posts')
+  .then(response => response.json())
+  .then(posts => {
+    console.log(posts);
+    posts.forEach(function(post){
+      post_div=document.createElement('div')
+      post_div.style='border:1px solid black; margin:20px; width:700px; padding:10px;'
+      post_div.append(document.createElement('h3').innerHTML=post.username);
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('br'));
+      post_content=document.createElement('p').innerHTML=post.content;
+      post_div.append(post_content);
+      edit_box=document.createElement('textarea')
+      edit_box.style='display:none;';
+      post_div.append(edit_box);
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('h6').innerHTML=post.like);
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('h6').innerHTML=post.date);
+      post_div.append(document.createElement('br'));
+      post_div.append(document.createElement('br'));
+      const edit_button=document.createElement('button');
+      edit_button.textContent='Edit';
+      edit_button.addEventListener('click', function(){
+        post_content.style='display:none;'
+        edit_box.style='display:block;'
+      });
+      post_div.append(edit_button);
+      document.querySelector('.post_div').append(post_div);
+    });
+  });
+});

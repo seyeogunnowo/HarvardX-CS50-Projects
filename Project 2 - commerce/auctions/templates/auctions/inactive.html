@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h1>Inactive Listingss</h1>
+<hr>
+{%for item in inactive%}
+<div class="indlist">
+  <form class="" action="{%url 'auctions:inactive_page'%}" method="get">
+    {%csrf_token%}
+    <input type="hidden" name="inactive_title" value={{item.title}}>
+    <input type="hidden" name="inactive_id" value={{item.id}}>
+    <input type="submit" name="" class="listing_title" value="{{item.title}}">
+  </form>
+  <h5>Price: {{item.starting_bid}}</h5>
+  <br>
+</div>
+{% endfor %}
+{% endblock %}

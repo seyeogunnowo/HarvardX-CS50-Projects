@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h2>{{inactive.title}}</h2>
+<h5>Price: {{inactive.starting_bid}}</h5>
+<h5>Description:</h5>
+<p>{{inactive.description}}</p>
+{%if inactive.winning_user == user.username%}
+<h4 style="color: green;">You won this auction!</h4>
+{%else%}
+<h4 style="color: green;">Winner: {{inactive.winning_user}}, Bid: {{inactive.winning_bid}}</h4>
+{%endif%}
+{%endblock%}
